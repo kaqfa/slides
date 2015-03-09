@@ -45,15 +45,15 @@ Pilih minimum SDK sesuai target pasar kita:
 
 Android Studio akan membawa kita ke tampilan awal seperti berikut:
 
-<a href="./images/01/Android Studio_004.png">
-    <img src="./images/01/Android Studio_004.png" style="width: 60%" />
+<a href="mobile_prog/images/01/Android Studio_004.png">
+    <img src="mobile_prog/images/01/Android Studio_004.png" style="width: 60%" />
 </a>
 
 ---
 
 ### Struktur Dasar Project Android
 
-![struktur dasar](./images/01/Selection_006.png)
+![struktur dasar](mobile_prog/images/01/Selection_006.png)
 
 Bagian yang paling penting untuk diperhatikan adalah:
 
