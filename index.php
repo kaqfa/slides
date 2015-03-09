@@ -41,15 +41,14 @@
 
 		<div class="reveal">
 
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
+    <div class="slides">
     <?php
         if(isset($_GET['s']))
             echo '<section data-markdown="'.$_GET['s'].'" data-separator="^---" data-vertical="^--"></section>';
         else
             echo '<section data-markdown="frontmater.md" data-separator="^---" data-vertical="^--"></section>';
     ?>
-			</div>
+    </div>
 
 		</div>
 
