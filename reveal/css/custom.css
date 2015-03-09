@@ -1,0 +1,4 @@
+.reveal code{font-weight: bold; color: #FF0}
+.reveal pre code{font-weight: bold; color: inherit; font-size: 14pt;}
+.reveal .code_title{font-size: 50%; margin-right: 6%; font-style: italic; text-align: right; color: #D9FFFC;}
+.reveal .footnote{font-size: 65%; font-style: italic; text-align: left; color: #ff0; line-height: 130%;}
