@@ -1,4 +1,5 @@
 # <div class="highlight-blue">Section 01</div>
+
 ### Android Basic Component &amp; Development
 
 by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
@@ -80,9 +81,9 @@ manifests, java, res-layout, res-values-strings.xml, res-values-styles.xml, res-
 Alasan kenapa layout dan teks string tidak dijadikan satu pada source Java (seperti saat kita
 menggunakan javax.swing) adalah:
 
-- Android ingin memastikan komponen tersebut menjadi reusable dan easily customized.
-- Misalkan kita ingin menerapkan tampilan yang dapat diubah oleh pengguna dengan menggunakan Theme
-secara on-the-fly melalui program (Layout &amp; Style).
+- Android ingin memastikan komponen tersebut menjadi reusable dan *easily customized*.
+- Misalkan kita ingin menerapkan tampilan yang dapat diubah oleh pengguna dengan menggunakan *Theme*
+secara *on-the-fly* melalui program (Layout &amp; Style).
 - Atau kita ingin pengguna dapat memilih bahasa yang cocok digunakan untuk mereka melalui menu 
 aplikasi (Strings).
 
@@ -152,7 +153,7 @@ Merupakan file yang digunakan untuk menenetukan konfigurasi aplikasi, yang melip
 
 ### Android Activities
 
-Merupakan sebuah class yang inherit class induk Activity atau subclass Activity
+Merupakan sebuah class yang inherit class induk ```Activity``` atau subclass Activity
 (seperti class ```ActionActivity``` class ```ListActivity```, dan lain sebaginya), serta dapat digunakan 
 untuk merepresentasikan sebuah tampilan.
 
@@ -173,12 +174,18 @@ Contoh di project HelloWorld <!-- .element: class="code_title" -->
 ### Facts About Activity
 
 - Activity adalah satu-satunya komponen android yang dapat menampilkan UI
-- UI dapat berupa koding XML Layout yang kemudian dimasukkan (inflate/pompa) ke dalam sebuah activity
-- Inflating atau setContentView() biasanya dimasukkan pada event onCreate()
+- UI dapat berupa koding XML Layout yang kemudian dimasukkan (*inflate*/pompa) ke dalam sebuah activity
+- Inflating atau ```setContentView()``` biasanya dimasukkan pada event ```onCreate()```
 - Activity memiliki life cycle methods yang otomatis dipanggil pada suatu keadaan tertentu:
-  - onCreate, onStart, onPause, onResume, onStop, onDestroy, onRestart
+  - ```onCreate```, ```onStart```, ```onPause```, ```onResume```, ```onStop```, ```onDestroy```, ```onRestart```
 - class Activity memiliki beberapa turunan (subclass) untuk tampilan yang lebih spesifik seperti:
-  - ListActivity, TabActivity, ActionBarActivity, FragmentActivity, dll
+  - ```ListActivity```, ```TabActivity```, ```ActionBarActivity```, ```FragmentActivity```, dll
+
+--
+
+### Diagram Activity Life Cycle
+
+[![Activity Life Cycle](./mobile_prog/images/01/activity_lifecycle.png) <!-- .element: style="height: 450px" -->](./mobile_prog/images/01/activity_lifecycle.png)
 
 --
 
@@ -284,7 +291,7 @@ Ada 2 cara untuk mendesain tampilan pada Android:
 ### The Magic of R Class
 
 Pembentukan layout menggunakan XML berarti kita memisahkan desain antarmuka dengan logika.
-Untuk menghubungkannya, Android menyiapkan R Class yang otomatis di-generate oleh Java setiap
+Untuk menghubungkannya, Android menyiapkan ```R``` Class yang otomatis di-generate oleh Java setiap
 kita menambahkan komponen baru.
 
 --
