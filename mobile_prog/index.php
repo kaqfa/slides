@@ -1,3 +1,3 @@
 <?php
-    header("location:../index.php?mobile_prog/index_mobile.md");
+    header("location:../index.php?mobile_prog/index.md");
 ?>

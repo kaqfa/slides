@@ -1,3 +1,3 @@
 <?php
-    header("location:../index.php?data_structure/index_strukdat.md");
+    header("location:../index.php?data_structure/index.md");
 ?>
