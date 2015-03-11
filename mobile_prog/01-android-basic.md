@@ -76,32 +76,6 @@ manifests, java, res-layout, res-values-strings.xml, res-values-styles.xml, res-
 
 --
 
-### Catatan untuk Layout, Style, &amp; Strings
-
-Alasan kenapa layout dan teks string tidak dijadikan satu pada source Java (seperti saat kita
-menggunakan javax.swing) adalah:
-
-- Android ingin memastikan komponen tersebut menjadi reusable dan *easily customized*.
-- Misalkan kita ingin menerapkan tampilan yang dapat diubah oleh pengguna dengan menggunakan *Theme*
-secara *on-the-fly* melalui program (Layout &amp; Style).
-- Atau kita ingin pengguna dapat memilih bahasa yang cocok digunakan untuk mereka melalui menu 
-aplikasi (Strings).
-
---
-
-### Jadi Untuk Modifikasi ... ???
-
-- Modifikasi nama aplikasi?
-- Modifikasi versi aplikasi?
-- Modifikasi tampilan?
-- Modifikasi teks yang ditampilkan?
-- Modifikasi gambar latar belakang?
-- Modifikasi logika program?
-- Modifikasi koneksi basis data?
-- Modifikasi permisi aplikasi?
-
---
-
 ### App Manifest
 
 Merupakan file yang digunakan untuk menenetukan konfigurasi aplikasi, yang meliputi:
@@ -286,6 +260,19 @@ Ada 2 cara untuk mendesain tampilan pada Android:
   - Lebih mudah dan ada antamuka GUI
   - Intermediasi R Class untuk mempermudah manipulasi melalui Java
 
+--
+
+### Catatan untuk Layout, Style, &amp; Strings
+
+Alasan kenapa layout dan teks string tidak dijadikan satu pada source Java (seperti saat kita
+menggunakan javax.swing) adalah:
+
+- Android ingin memastikan komponen tersebut menjadi reusable dan *easily customized*.
+- Misalkan kita ingin menerapkan tampilan yang dapat diubah oleh pengguna dengan menggunakan *Theme*
+secara *on-the-fly* melalui program (Layout &amp; Style).
+- Atau kita ingin pengguna dapat memilih bahasa yang cocok digunakan untuk mereka melalui menu 
+aplikasi (Strings).
+
 ---
 
 ### The Magic of R Class
@@ -325,6 +312,19 @@ kita menambahkan komponen baru.
 - Ingin menambahkan perintah yang akan dijalankan pada event tertentu.
   - Tambahkan attribute event pada file layout yang sesuai
   - Kemudian tuliskan instruksi pemrograman pada direktori src
+
+--
+
+### Jadi Untuk Modifikasi ... ???
+
+- Modifikasi nama aplikasi?
+- Modifikasi versi aplikasi?
+- Modifikasi tampilan?
+- Modifikasi teks yang ditampilkan?
+- Modifikasi gambar latar belakang?
+- Modifikasi logika program?
+- Modifikasi koneksi basis data?
+- Modifikasi permisi aplikasi?
 
 ---
 
