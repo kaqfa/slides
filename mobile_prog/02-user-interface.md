@@ -254,10 +254,207 @@ Class ViewGroup juga menjadi base class untuk container komponen dan layout
 - ```Gallery```: kumpulan beberapa gambar yang tersusun secara tabular
 - ```Spinner```: kumpulan text yang dapat dipilih secara dropdown
 
+--
+
+### Cara-Cara Penggunaan ViewGroup
+
+Setiap ViewGroup memiliki cara deklarasi dan penggunaan yang berbeda dan memerlukan
+lebih banyak tahap dibandingkan komponen UI biasa:
+
+- Radio Group: deklarasikan ```RadioGroup``` dan ```RadioButton``` semua pada file layout
+  - Contoh : coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIRadioGroup
+- Time Picker: tidak ada komponen yang dideklarasikan di file layout, namun dipanggil
+  secara dinamis melalui kode Java dengan dibungkus pada sebuah kotak dialog
+  - Contoh : coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UITimePicker
+- DatePicker: sama seperti Time Picker
+  - Contoh : coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIDatePicker
+  
+--
+
+### Cara-Cara Penggunaan ViewGroup (2)
+
+- Web View: deklarasikan ```WebView``` pada file layout, kemudian spesifikasikan halaman
+  web yang ingin dipanggil pada kode Java
+  - Contoh: coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIWebView
+- Map View: hampir seperti Web View, namun memerlukan langkah yang lebih panjang (akan dibahas
+  pada bagian Location Based Service setelah MID semester)
+  - Contoh: coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIGoogleMaps
+  - Langkah: https://developers.google.com/maps/documentation/android/start
+- Gallery &amp; Spinner akan dibahas pada pada bagian selanjutnya di Adapter
+
 ---
 
 ### Mengatur Tata Letak dengan Layout
 
+Layout merupakan sub Class dari ViewGroup yang mendefinisikan struktur tampilan dari
+komponen View yang dimiliki.
+
+- Layout Sederhana:
+  - ```FrameLayout```: untuk Menampilkan hanya satu atau dua elemen aja
+  - ```LinearLayout```: untuk menampilkan elemen secara berjajar horizontal atau vertical
+  - ```RelativeLayout```: untuk menampilkan elemen yang posisinya diatur relatif terhadap
+    komponen lain
+  - ```TableLayout```: untuk menampilkan elemen yang diatur seperti tabel
+- Layout Dinamis:
+  - ```ListLayout```: menampilkan kelompok elemen secara dinamis secara berjajar
+  - ```GridLayout```: menampilkan kelompok elemen secara dinamis dengan kotak-kotak
+  
+--
+
+### Contoh RelativeLayout
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- Note the use of android:hint to put explanatory text in the EditText  -->
+    <EditText
+        android:id="@+id/entry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/type_here_string"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/ok_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/entry"
+        android:layout_marginLeft="10dip"
+        android:text="@string/ok_string"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ok_button"
+        android:layout_toLeftOf="@id/ok_button"
+        android:text="@string/cancel_string"
+        android:textSize="24sp" />
+
+</RelativeLayout>
+```
+
+coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIRelativeLayout <!-- .element: class="code_title" -->
+
+--
+
+### Contoh TebleLayout
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1" >
+
+    <!-- First row -->
+    <TableRow>
+
+        <!-- start in column 1 -->
+        <TextView
+            android:layout_column="1"
+            android:padding="3dip"
+            android:text="@string/open_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="@string/ctrl_o_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:padding="3dip"
+            android:text="@string/save_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="@string/ctrl_s_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:padding="3dip"
+            android:text="@string/save_as_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="@string/ctrl_shift_s_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+    <!-- Create a divider -->
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+    <TableRow>
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/x_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/import_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+    <TableRow>
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/x_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:padding="3dip"
+            android:text="@string/export_string"
+            android:textSize="24sp" />
+
+        <TextView
+            android:gravity="right"
+            android:padding="3dip"
+            android:text="@string/ctrl_e_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+    <View
+        android:layout_height="2dip"
+        android:background="#FF909090" />
+
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:padding="3dip"
+            android:text="@string/quit_string"
+            android:textSize="24sp" />
+    </TableRow>
+
+</TableLayout>
+```
+
+coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UITableLayout <!-- .element: class="code_title" -->
+
 ---
 
-### Penggunaan Fragment untuk Lokalisasi
+### Fragment Pada User Interface
+
