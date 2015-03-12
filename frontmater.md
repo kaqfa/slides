@@ -15,4 +15,4 @@
 - [Pemrograman Berorientasi Obyek](?s=strukdat/index.md)
 - [Strategi Algoritma](?s=strukdat/index.md)
 - [Pemrograman Internet](?s=strukdat/index.md)
-- [Pemrograman Mobile](?s=mobile_prog/index_mobile.md)
+- [Pemrograman Mobile](?s=mobile_prog/index.md)
