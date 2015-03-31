@@ -38,8 +38,8 @@ Queue is data structure to
 - ```isEmpty()```: when the first and last index value = -1
 - ```isFull()```: when the last index value = array.length - 1
   and the first index value = 0
-- ```isOneElement()```: when the last - first index = 1
-- ```semiFull()```: when the last index value = array.length - 1
+- ```isOneElement()```: when the value of last = first
+- ```semiFull()```*: when the last index value = array.length - 1
   and the first index value != 0
 
 --
@@ -57,6 +57,35 @@ Queue is data structure to
   - if is one element set the value of the first and last index into -1
   - then increase the value of the first index by 1 and return the 
     removed value
+    
+---
+
+### 3rd Alternative
+
+- ```isEmpty()```: when the first and last index value = -1
+- ```isFull()```: 
+  - when the last index value = array.length - 1 and the first index value = 0
+  - when first - last = 1
+- ```isOneElement()```: when the value of last = first
+- ```semiFull()```*: when the last index value = array.length - 1
+  and the first index value != 0
+  
+--
+
+### 3rd Alternative cont'd
+
+- ```add()```: 
+  - if empty increase the value of last and first index by 1
+  - if not semi full increase the value of the last index by 1
+  - if last = array.length - 1 set the value of last index to -1
+  - then increase the value of the last index by 1 and insert
+    the value into array[last]
+- ```remove()```:
+  - if is one element set the value of the first and last index into -1
+  - if first = array.length - 1, set the value of first index to -1
+  - then increase the value of the first index by 1 and return the 
+    removed value
+
 ---
 
 # Queue Implementations
