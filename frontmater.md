@@ -11,7 +11,7 @@
 ## List Presentasi
 
 - [Algoritma Pemrograman](?s=strukdat/index.md)
-- [Struktur Data](?s=strukdat/index.md)
+- [Struktur Data](?s=data_structure/index.md)
 - [Pemrograman Berorientasi Obyek](?s=strukdat/index.md)
 - [Strategi Algoritma](?s=strukdat/index.md)
 - [Pemrograman Internet](?s=strukdat/index.md)
