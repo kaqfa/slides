@@ -28,7 +28,7 @@ Queue is data structure to
 
 - ```add()```: increase the value of last index by 1, then insert the
   value into array[index]
-- ```remove```: decrease the value of the last index by 1, shift all
+- ```remove()```: decrease the value of the last index by 1, shift all
   of array values into an index before them, then return the removed value
 
 ---
