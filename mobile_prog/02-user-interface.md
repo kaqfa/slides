@@ -600,3 +600,36 @@ gridview.setOnItemClickListener(new OnItemClickListener() {
 
 ---
 
+### DrawerLayout
+
+- Menampilkan menu pinggir yang bisa dibuka tutup dengan event tertentu
+- Dibangun dengan 2 elemen kontainer yaitu elemen konten utama dan elemen drawer
+- Elemen drawer biasanya merupakan ListView yang merupakan daftar pilihan
+
+--
+
+### Langkah Membuat Drawer Layout
+
+- Buat file layout dengan DrawerLayout dan 2 elemen kontainer
+- Inisialisasikan ListView untuk menu drawer dengan menggunakan adapter
+  seperti yang telah dijelaskan sebelumnya
+- Tentukan event untuk open &amp; close Drawer
+- Gunakan ActionBar untuk membuka dan menutup drawer
+
+---
+
+### Rekap Tutorial Step By Step
+
+Bagi yang masih belum nyaman hanya dengan membaca source code, berikut
+adalah link tutorial yang menjelaskan langkah per langkah pembuatan
+beberapa tampilan dengan Adapter:
+
+- Spinner : [Tutorials Point-Spinner](http://www.tutorialspoint.com/android/android_loading_spinner.htm)
+- ListView : [Tutorials Point-ListView](http://www.tutorialspoint.com/android/android_list_view.htm)
+- GridView : [Tutorials Point-GridView](http://www.tutorialspoint.com/android/android_grid_view.htm)
+- Drawer : [AndroidHive-DrawerNavigation](http://www.androidhive.info/2013/11/android-sliding-menu-using-navigation-drawer/)
+
+---
+
+# Last of Presentation
+### Next is Intent and BroadcastReceivers
