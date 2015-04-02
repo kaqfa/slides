@@ -11,9 +11,9 @@ by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
 - [Komponen Dasar UI](#01)
 - [ViewGroup](#02)
 - [Manajemen Layout](#03)
-- [Fragment untuk UI](#04)
 - [AdapterView](#05)
 - [List &amp; Grid Layout](#06)
+- [Fragment untuk UI Adaptif](#04)
 
 ---
 
@@ -456,5 +456,147 @@ coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UITableLayou
 
 ---
 
-### Fragment Pada User Interface
+### ArrayAdapter dan BaseAdapter
+
+- Beberapa komponen GroupView memerlukan proses untuk men-transform
+  data sekuensial (array, list, kursor, dll) ke dalam kumpulan view.
+- Dua jenis adapter yang sering digunakan adalah:
+  - ```ArrayAdapter```: *Concrete Class* dan digunakan untuk mengadapatasi
+    data sekuensial String.
+  - ```BaseAdapter```: *Abstract Class* harus di-extend ke dalam bentuk
+    yang lebih bervariasi.
+
+---
+
+### Spinner dengan ArrayAdapter
+
+Untuk menampilkan beberapa data dengan menggunakan spinner, langkahnya
+adalah sebagai berikut:
+
+1. Buat array kumpulan String
+2. Buat layout individu untuk tiap list-nya
+   (bisa digantikan dengan layout spinner standar android)
+3. Instantiasikan ArrayAdapter dengan tipe generic String
+   yang mengambil nilai dari Array yang sudah dibuat, dan
+   konfigurasi layout yang ditetapkan
+4. pilih elemen spinner dan set adapter yang sudah dibuat
+
+<hr />
+*NB: contoh menggunakan coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UISpinner*
+
+--
+
+### Langkah 1 &amp; 2
+
+string.xml <!-- .element: class="code_title" -->
+
+```xml
+<string-array name="colors">
+    <item>red</item>
+    <item>orange</item>
+    <item>yellow</item>
+    <item>green</item>
+    <item>blue</item>
+    <item>indigo</item>
+    <item>violet</item>
+</string-array>
+```
+
+SpinnerActivity.java <!-- .element: class="code_title" -->
+
+```java
+// another alternative
+// String [] arrColor = {"red", "orange", "yellow", "green", "blue", "indigo", "violet"};
+// Create an Adapter that holds a list of colors
+ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+        this, R.array.colors, R.layout.dropdown_item /*arrColor*/);
+```
+
+--
+
+### Langkah 3, 4, &amp; Listener
+
+```java
+Spinner spinner = (Spinner) findViewById(R.id.spinner);
+spinner.setAdapter(adapter);
+
+spinner.setOnItemSelectedListener(new OnItemSelectedListener() {...} );
+```
+
+---
+
+### ListLayout dengan ArrayAdapter
+
+- Dengan langkah yang hampir sama seperti Spinner yaitu deklarasi array,
+  instantiasi adapter, dan set adapter
+- Hanya saja untuk mempersingkat koding, Android sudah menyediakan 
+  ListActivity yang merupakan extends dari Activity namun sudah mengimplementasikan
+  ListLayout di dalamnya.
+- Contoh penggunaannya di: coursera-android &raquo; Examples &raquo; 4. user interface &raquo; UIListView
+
+---
+
+### GridView dengan BaseAdapter
+
+- Jika ingin menampilkan list komponen yang bukan sekedar string,
+  diperlukan class Adapter yang lebih powerful, yaitu ```BaseAdapter```.
+- Langkah penggunaannya adalah:
+  - Buat class yang extends BaseAdapter
+  - Class tersebut harus override ```getCount()```, ```getItem()```, ```getItemId()```,
+    dan ```getView()```.
+  - Deklarasikan list /  array data
+  - Buat instantiasi class adapter yang telah dibuat dengan menggunakan data array
+  - Pilih elemen gridview dan set dengan adapter yang telah dibuat
+  
+--
+
+### Langkah 1: Class Adapter
+
+```java
+public class ImageAdapter extends BaseAdapter {
+	private static final int PADDING = 8;
+	private static final int WIDTH = 250;
+	private static final int HEIGHT = 250;
+	private Context mContext;
+	private List<Integer> mThumbIds;
+
+	// Store the list of image IDs
+	public ImageAdapter(Context c, List<Integer> ids) {
+		mContext = c;
+		this.mThumbIds = ids;
+	}
+
+	...
+}
+```
+
+--
+
+### Langkah 2: Deklarasi Data Sekuensial
+
+```java
+private ArrayList<Integer> mThumbIdsFlowers = new ArrayList<Integer>(
+        Arrays.asList(R.drawable.image1, R.drawable.image2,
+                R.drawable.image3, R.drawable.image4, R.drawable.image5,
+                R.drawable.image6, R.drawable.image7, R.drawable.image8,
+                R.drawable.image9, R.drawable.image10, R.drawable.image11,
+                R.drawable.image12));
+```
+
+--
+
+### Langkah Selanjutnya ...
+
+```java
+GridView gridview = (GridView) findViewById(R.id.gridview);
+
+// Create a new ImageAdapter and set it as the Adapter for this GridView
+gridview.setAdapter(new ImageAdapter(this, mThumbIdsFlowers));
+
+// Set an setOnItemClickListener on the GridView
+gridview.setOnItemClickListener(new OnItemClickListener() {
+        new OnItemClickListener() { ... } );
+```
+
+---
 
