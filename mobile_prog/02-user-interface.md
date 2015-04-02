@@ -605,6 +605,8 @@ gridview.setOnItemClickListener(new OnItemClickListener() {
 - Menampilkan menu pinggir yang bisa dibuka tutup dengan event tertentu
 - Dibangun dengan 2 elemen kontainer yaitu elemen konten utama dan elemen drawer
 - Elemen drawer biasanya merupakan ListView yang merupakan daftar pilihan
+<hr />
+*Contoh yang digunakan: SelectedAndroidSample &raquo; NavigationDrawer*
 
 --
 

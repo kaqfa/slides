@@ -163,20 +163,8 @@ memiliki activity yang dadpt digunakan untuk meng-handle sebuah operasi:
 
 ---
 
-### Fragment
+### BroadcastReceiver
 
-- Sebuah user interface dapat dipecah menjadi beberapa fragment
-- Masing-masing fragment memiliki definisi class-nya sendiri dan juga
-  memiliki UI layoutnya sendiri
-- Fragment sangat berguna untuk mengadaptasi tampilan aplikasi pada 
-  tablet dan Handphone
 
---
-
-### Fragment untuk Adaptasi Tampilan Handphone &amp; Tablet
-
-![fragments](mobile_prog/images/04/fragments.png)
-
----
 
 ### 
