@@ -66,7 +66,7 @@ by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
 
 - Untuk memudahkan pengembangan aplikasi ada baiknya kita mengaktifkan
   fitur Eloquent ORM-nya laravel dengan mengetikkan kode berikut pada
-  **app.php**
+  **bootstrap/app.php**
   ```
   Dotenv::load(__DIR__.'/../');
  
@@ -142,10 +142,10 @@ by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
 - Sebagai gantinya kita bisa menaruh model di manapun
 - Buat file Article.php pada direktori App
 - Kemudian ketikkan kode berikut pada file tersebut
+
 ```
 <?php namespace App;
  use Illuminate\Database\Eloquent\Model;
- 
  
  class Article extends Model{}
 ```
@@ -195,7 +195,10 @@ public function getArticle($id){
 }
 
 public function saveArticle(Request $request){
-    $article = Article::create($request->all());
+    $article = new Article();
+		$article->title = $request->input('title');
+		$article->content = $request->input('content');
+		$article->save();		
     return response()->json($article);
 }
 
@@ -233,6 +236,12 @@ $app->delete('api/article/{id}','App\Http\Controllers\ArticleController@deleteAr
 --
 
 ### Uji coba Lumen
+
+- Jalankan aplikasi lumen pertama kita dengan menjalankan perintah berikut
+  pada command prompt:
+  ```
+  php artisan serv
+  ``` 
 
 ---
 
