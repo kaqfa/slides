@@ -23,30 +23,18 @@ by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
 - Django memiliki fitur admin generator
 - Dengan menambahkan plugin Django-Rest-Framework, kita 
   dapat membuat API service secara mudah
+- Bonus, ada browsable API untuk memudahkan dokumentasi service
   
 --
 
-### Setting Django
+### Langkah Khusus Django
 
---
-
-### Membuat Model dan DB Migration
-
--- 
-
-### Membuat Admin Otomatis
-
---
-
-### Membuat Serializer
-
---
-
-### Membuat Viewset
-
---
-
-### Register Router
+- Membuat project dan aplikasi
+- Membuat model dan migrasi database
+- Membuat admin (untuk tampilan GUI)
+- Membuat serializer
+- Membuat viewset (controller)
+- Register router
 
 ---
 
@@ -247,7 +235,8 @@ $app->delete('api/article/{id}','App\Http\Controllers\ArticleController@deleteAr
   pada command prompt:
   ```
   php artisan serv
-  ``` 
+  ```
+- Lihat hasilnya pada browser atau API browser 
 
 ---
 
