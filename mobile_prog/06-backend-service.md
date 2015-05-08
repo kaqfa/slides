@@ -6,6 +6,16 @@ by: [Fahri Firdausillah](http://fahrifirdaus.web.id)
 
 ---
 
+### Langkah Umum Bekerja dengan Framework
+
+- Create project
+- Setting project
+- Model dan migrasi database
+- Membuat controller
+- Membuat URL router
+
+---
+
 ### Intro Menggunakan Django
 
 - Django merupkan framework pengembangan aplikasi web
