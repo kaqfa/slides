@@ -28,7 +28,7 @@ Created by [Fahri Firdausillah](http://fahrifirdaus.web.id)
 
 ### Representasi Linked List
 
-[!img 'data_structure/images/linked_list.gif']
+![linked list](data_structure/images/linked_list.gif)
 
 - Sebuah elemen Linked List sering digambarkan dengan kotak yang terdiri dari 2 bagian
 - Bagian pertama untuk menyimpan data (bisa menyimpan banyak data)
