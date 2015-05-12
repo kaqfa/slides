@@ -1,6 +1,6 @@
-# Intro Java
+# Queue
 
-### Java untuk Programmer C
+### Implementasi Queue di Java
 
 Created by [Fahri Firdausillah](http://fahrifirdaus.web.id)
 
@@ -8,7 +8,7 @@ Created by [Fahri Firdausillah](http://fahrifirdaus.web.id)
 
 ### Basic Queue
 
-Queue is data structure to 
+Queue is a data structure to 
 
 ---
 
