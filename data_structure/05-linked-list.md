@@ -66,3 +66,61 @@ class Element{
   Element link;
 }
 ```
+
+--
+
+### Class Linked List
+
+- Class LinkedList berisi element pertama untuk mengidentifikasi awal Linked List
+- dan juga beberapa fungsi manipulasi Linked List
+
+```java
+class LinkedList{
+  Element first;
+  
+  public void add(Element elm){}
+  public void del(int data){}
+  public void update(int data, Element elm){}
+  public Element find(int data){}
+}
+```
+
+--
+
+### Menambahkan Data (di akhir List)
+
+```java
+public void add(Element elm){
+  
+}
+```
+
+--
+
+### Menghapus Data
+
+```java
+public void del(int data){
+  
+}
+```
+
+--
+
+### Mengupdate Data
+
+```java
+public void update(int data){
+  
+}
+```
+
+--
+
+### Mendapatkan Nilai Elemen
+
+```java
+public void find(int data){
+  
+}
+```
