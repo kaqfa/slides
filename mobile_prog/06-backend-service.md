@@ -240,4 +240,70 @@ $app->delete('api/article/{id}','App\Http\Controllers\ArticleController@deleteAr
 
 ---
 
-## Kesimpulan
+## Konsumsi Service
+### Manipulasi Hasil Data via Service
+
+---
+
+### Alur Akses Data Service
+
+- Buat class pengakses jaringan
+- Tambahkan permisi penggunaan Internet pada manifest
+- Buat class activity dengan tambahan inner class
+  - Inner class dibuat private dan inherit AsyncTask
+  - Override method doInBackground 
+  - Class akses jaringan yang telah dibuat dapat digunakan pada method tersebut
+  - Untuk mempercantik bisa juga override method onPreExcute dan onPostExecute
+- Buat event untuk memanggil inner class tersebut
+
+--
+
+### Class Pengakses Jaringan
+
+- Class ini menggunakan ```HTTPClient```, ```HTTPEntity```, dan ```HTTPRespose```
+  - ```HTTPClient``` untuk konfigurasi akses url yang diinginkan
+  - ```HTTPEntity``` untuk mengirimkan parameter tambahan
+  - ```HTTPResponse``` untuk menerima data response yang diberikan server
+- Untuk manipulasi data response sebaiknya jangan di class ini
+- Contoh dapat dilihat pada class ServiceHandler.java
+
+--
+
+### Permisi Penggunaan Internet
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+--
+
+### Inner Class AsyncTask
+
+- Karena koneksi jaringan adalah pekerjaan yang memakan waktu, 
+  kita perlu membungkusnya ke dalam tugas yang dikerjakan secara asingkron
+- Artinya setelah tugas dimulai, aplikasi masih dapat mengerjakan hal lain
+  sambil menunggu koneksi selesai
+- Meski demikian, jika pekerjaan lain membutuhkan data yang didapatkan dari
+  jaringan, lebih baik kita membuat penanda tunggu
+
+--
+
+### Inner Class AsyncTask (2)
+
+- override ```onPreExecute``` untuk mengeset apa yang harus dikerjakan sebelum
+  melakukan pemanggilan jaringan
+- overring ```onPostExecute``` untuk mengeset apa yang harus dikerjakan setelah
+  pemanggilan jaringan selesai
+- dan wajib override ```doInBackground``` untuk mendeskripsikan apa saja yang
+  dilakukan aplikasi setelah mendapatkan data dari jaringan
+  
+--
+
+### Inner Class AsyncTask (3)
+
+- Pada ```doInBackground``` kita memanggil class akses data service untuk mendapatkan
+  data dari jaringan berupa text dalam format JSON
+- Selanjutnya gunakan class ```JSONObject``` dan ```JSONArray``` untuk memanipulasi
+  data dalam bentuk JSON tersebut
+- Setelah semua data disimpan dalam bentuk Array, List, atau Map baru dapat dimanipulasi
+  lebih lanjut dengan adapter
