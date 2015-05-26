@@ -5,7 +5,7 @@
 - [Basic User Interface](index.php?s=mobile_prog/02-user-interface.md)
 - [Intents](index.php?s=mobile_prog/03-intents.md)
 - [File &amp; Storage](index.php?s=mobile_prog/01-android-basic.md)
-- [SQLite Android](index.php?s=mobile_prog/01-android-basic.md)
+- [SQLite Android](index.php?s=mobile_prog/05-sqlite-android.md)
 - [Backend Service](index.php?s=mobile_prog/06-backend-service.md)
 - [Location Based App](index.php?s=mobile_prog/01-android-basic.md)
 - [Open API](index.php?s=mobile_prog/01-android-basic.md)
